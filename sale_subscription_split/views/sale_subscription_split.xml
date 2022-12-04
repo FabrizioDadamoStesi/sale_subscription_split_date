@@ -1,0 +1,29 @@
+<odoo>
+    <record model="ir.ui.view" id="sale_order_view_list_inherit_custom">
+        <field name="name">sale.order.view.inherit.custom</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Delivery Note">
+                    <field name="subscription_line_ids">
+                        <tree editable="bottom">
+                            <field name="product_id"/>
+                            <field name="date_delivery"/>
+                            <field name="delivery_id" invisible="1"/>
+                        </tree>
+                        <form>
+                            <group>
+                                <field name="product_id"/>
+                            </group>
+                            <group>
+                                <field name="date_delivery"/>
+                            </group>
+                        </form>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+
+    </record>
+</odoo>

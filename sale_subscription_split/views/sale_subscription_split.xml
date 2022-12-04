@@ -22,6 +22,25 @@
                         </form>
                     </field>
                 </page>
+                <page string="Delivery Plan">
+                    <form>
+                        <sheet>
+                            <group>
+                                <group>
+                                    <field name="product_id" string="Product"/>
+                                </group>
+                                <group>
+                                    <field name="period" string="Every"/>
+                                    <field name="months" string="Cadence"/>
+                                </group>
+                                <group>
+                                    <field name="qty" string="Quantity"/>
+                                </group>
+
+                            </group>
+                        </sheet>
+                    </form>
+                </page>
             </xpath>
         </field>
 

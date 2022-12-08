@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale', 'product','sale_subscription','stock','purchase',"sale_order_line_date","sale_procurement_group_by_line",],
+    'depends': ['base', 'sale', 'product','sale_subscription','stock','purchase',],
     'installable': True,
     'application': True,
 

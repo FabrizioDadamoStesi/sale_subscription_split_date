@@ -20,14 +20,17 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale', 'product','sale_subscription','stock','purchase'],
+    'depends': ['base', 'sale', 'product','sale_subscription','stock','purchase',"sale_order_line_date","sale_procurement_group_by_line",],
     'installable': True,
     'application': True,
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/sale_subscription_split.xml'
+        'views/sale_subscription_split.xml',
+        'views/quotation_subscription_split.xml',
+
+
 
     ],
     # only loaded in demonstration mode

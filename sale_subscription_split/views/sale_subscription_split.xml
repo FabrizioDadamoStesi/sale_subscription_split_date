@@ -5,42 +5,27 @@
         <field name="inherit_id" ref="product.product_template_only_form_view"/>
         <field name="arch" type="xml">
             <xpath expr="//notebook" position="inside">
-                <page string="Delivery Note">
+                <page string="Delivery Plan">
                     <field name="subscription_line_ids">
                         <tree editable="bottom">
                             <field name="product_id"/>
-                            <field name="date_delivery"/>
+                            <field name="list_price" widget="monetary"
+                                   options="{'currency_field': 'company_currency_id'}"/>
+
+                            <field name="qty"/>
+                            <field name="every"/>
+                            <field name="months"/>
+                            <field name="period"/>
+
+                            <field name="company_currency_id" invisible="1"/>
+                            <field name="price_subtotal" sum="Total" widget="monetary"
+                                   options="{'currency_field': 'company_currency_id'}"/>
                             <field name="delivery_id" invisible="1"/>
                         </tree>
-                        <form>
-                            <group>
-                                <field name="product_id"/>
-                            </group>
-                            <group>
-                                <field name="date_delivery"/>
-                            </group>
-                        </form>
+
                     </field>
                 </page>
-                <page string="Delivery Plan">
-                    <form>
-                        <sheet>
-                            <group>
-                                <group>
-                                    <field name="product_id" string="Product"/>
-                                </group>
-                                <group>
-                                    <field name="period" string="Every"/>
-                                    <field name="months" string="Cadence"/>
-                                </group>
-                                <group>
-                                    <field name="qty" string="Quantity"/>
-                                </group>
 
-                            </group>
-                        </sheet>
-                    </form>
-                </page>
             </xpath>
         </field>
 
